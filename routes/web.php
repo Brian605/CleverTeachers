@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApplicantController;
+use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CareerController;
@@ -45,7 +46,7 @@ Route::get('/blogs/new',[Navigator::class,'newBlog'])->middleware('auth');
 Route::get('/teachers/new',[Navigator::class,'newTeacher'])->middleware('auth');
 Route::get('/lecturers',[Navigator::class,'teachers'])->middleware('auth');
 Route::get('/semesters',[Navigator::class,'semesters'])->middleware('auth');
-Route::get('/downloads',[Navigator::class,'downloads'])->middleware('auth');
+Route::get('/assignments',[Navigator::class,'assignments'])->middleware('auth');
 Route::get('/pastpapers',[Navigator::class,'pastPapers'])->middleware('auth');
 Route::get('/careers',[Navigator::class,'careers'])->middleware('auth');
 Route::get('/careers/new',[Navigator::class,'newCareer'])->middleware('auth');
@@ -92,7 +93,8 @@ Route::post('/resetpassword',[AuthController::class,'resetPassword'])->name('pas
 Route::post('/events/create',[EventController::class,'newEvent'])->middleware('auth');
 Route::post('/teachers/create',[TeacherController::class,'createTeacher'])->middleware('auth');
 Route::post('/semester/create',[SemesterController::class,'createSemester'])->middleware('auth');
-Route::post('/download/create',[DownloadsController::class,'createDownload'])->middleware('auth');
+
+Route::post('/assignment/create',[AssignmentController::class,'createAssignment'])->middleware('auth');
 Route::post('/pastpapers/create',[PastPaperController::class,'createPastPaper'])->middleware('auth');
 Route::post('/careers/create',[CareerController::class,'createCareer'])->middleware('auth');
 Route::post('/gallery/create',[GalleryController::class,'createGallery'])->middleware('auth');

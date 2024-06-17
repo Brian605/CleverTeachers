@@ -70,18 +70,18 @@ $course=Teacher::where('course',$teacher->course)->first();
                 </div>
             </div>
         </div>
-       {{-- <div class="col-xl-3 col-md-6">
+        <div class="col-xl-3 col-md-6">
             <div class="card feed-card card-border-none">
                 <div class="card-body py-0">
                     <div class="row">
-                        <div class="col-4 bg-secondary border-feed">
-                            <i class="material-icons-two-tone d-block f-46">playlist_add_check</i>
+                        <div class="col-4 bg-success border-feed">
+                            <i class="fa fa-book-reader f-46"></i>
                         </div>
                         <div class="col-8">
                             <div class="p-t-25 p-b-25">
-                                <h2 class="f-w-400 m-b-10">{{\App\Models\Intake::count()}}</h2>
+                                <h2 class="f-w-400 m-b-10">{{\App\Models\Assignment::where('teacherId',$teacher->id)->count()}}</h2>
                                 <p class="text-muted m-0">
-                                    Attendance <span class="text-info f-w-400"><a class="btn btn-primary" href="/students">Manage Students</a> </span>
+                                    Assignments <span class="text-info f-w-400"><a class="btn btn-primary" href="/assignments">Manage Assignments</a> </span>
                                 </p>
                             </div>
                         </div>
@@ -89,7 +89,6 @@ $course=Teacher::where('course',$teacher->course)->first();
                 </div>
             </div>
         </div>
---}}
         <div class="col-xl-4 col-md-6">
             <div class="card feed-card card-border-none">
                 <div class="card-body py-0">

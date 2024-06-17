@@ -61,9 +61,9 @@ class Navigator extends Controller
     {
         return view('pages.pastpapers');
     }
-    function downloads()
+    function assignments()
     {
-        return view('pages.downloads');
+        return view('pages.assignments');
     }
     function semesters()
     {
